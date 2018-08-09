@@ -1,7 +1,5 @@
-#Robert May
-#Jan 2018
-#Spams texts
-
+# Kill The Messenger
+# Copyright 2018 Robert May, Ben Botvinick
 
 class String
     def numeric?
@@ -146,7 +144,7 @@ end
 
 def send(person, timeInt, args, messList=[], wrapList=[])
     path = __dir__
-    system("osascript \"#{path}/getcontacts.txt\";pbpaste >#{path}/contacts.txt;echo -n '' | pbcopy")
+    system("osascript \"#{path}/get-contacts.applescript\";pbpaste >#{path}/contacts.txt;echo -n '' | pbcopy")
     contacts = read("#{path}/contacts.txt").split(";")
     contacts.push("[nobody]")
     while contacts.include?(person) == false
